@@ -29,3 +29,7 @@ for loc in location:
         items = re.findall(r'<mode>(.+?)</mode>.+<tmEf>(.+?)</tmEf>.+<wf>(.+?)</wf>.+<tmn>(.+?)</tmn>.+<tmx>(.+?)</tmx>', datum, re.DOTALL)
         row = '{},{},{},{},{},{},{}'.format(pro[0], city[0], mode[0], tmEf[0], wf[0], tmn[0], tmx[0])
         print(row)
+        f.write(row)
+        f.write('\n')
+
+f.close()
