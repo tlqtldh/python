@@ -1,12 +1,12 @@
-def write():
-    f = open('./data/write.txt', 'w', encoding='utf-8')
-    f.write('hello\n')
-    f.write('python' + '\n')
-    f.write('welcome')
-    f.write('\n')
-    f.close()
+#def write():
+#    f = open('./data/write.txt', 'w', encoding='utf-8')
+#    f.write('hello\n')
+#    f.write('python' + '\n')
+#    f.write('welcome')
+#    f.write('\n')
+#    f.close()
 
-write()
+#write()
 
 import requests
 import re
