@@ -11,6 +11,8 @@
 import requests
 import re
 
+f = open('C:/Users/Lia/git/python/data/kma.csv', 'w', encoding='utf-8')
+
 url = 'http://www.kma.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=108'
 recvd = requests.get(url)
 
