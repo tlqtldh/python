@@ -30,7 +30,7 @@ import json
 #print(type(root))
 #print(root.keys())
 
-def translate(text, toEng):
+def translate(text):
 
     headers = {'x-apigw-partnerid': 'papago'}
     payload = dict(data=text)
@@ -41,4 +41,4 @@ def translate(text, toEng):
     result = json.loads(recvd.text)
     return result['translatedText']
 
-print(translate('rlWxnJA0Vwc0paIyLCJkaWN0RGlzcGxheSI6NSwic291cmNlIjoia28iLCJ0YXJnZXQiOiJlbiIsInRleHQiOiLrgrTqsIAg7LWc6rOg64ukIn0%3D', True))
+print(translate('rlWxnJA0Vwc0paIyLCJkaWN0RGlzcGxheSI6NSwic291cmNlIjoia28iLCJ0YXJnZXQiOiJlbiIsInRleHQiOiLrgrTqsIAg7LWc6rOg64ukIn0%3D'))
