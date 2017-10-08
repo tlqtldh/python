@@ -31,3 +31,12 @@ print(a[-1:-1:-1])
 print(a[3:3])
 print(a[::-2])
 print(a[-2::-2])
+
+#Slicing을 이용해 반복문에 적용
+for i in range(0, len(a), 2):
+    print(a[i], end=' ')
+print ()
+
+for i in a[::2]:
+    print(i, end=' ')
+print()
