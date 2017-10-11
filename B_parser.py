@@ -33,6 +33,48 @@ def pop_paser(filename, find_str1, find_str2, prime_num):
             time_sum = float(time_num) 
     return result    
 
-cpu_result = pop_paser('result.txt', 'Number of threads:', 'total time:', 20000)
 
-print(cpu_result)
+#cpu_result = pop_paser('result.txt', 'Number of threads:', 'total time:', 20000)
+#print(cpu_result)
+
+ ## open the pop bmt result file
+with open( 'C:/Users/Lia/git/python/data/mem_bwt.txt', 'r') as content_file:
+    source = content_file.read()
+    content_file.close()
+
+## finding threads and total time using Regular expression operations
+string = "Triad: \s+\d+.\d+"
+re_search = re.compile(string)
+text = re_search.findall(source, re.MULTILINE)
+btw_num = 0
+j = 0
+for items in text:
+    set_btw = items.split(':')
+    btw_num += float(set_btw[1].strip())
+    j += 1
+
+print(btw_num/j)
+
+with open( 'C:/Users/Lia/git/python/data/mem-lat.txt', 'r') as content_file:
+    source = content_file.read()
+    content_file.close()
+
+string = "\d+[.]\d+"
+re_search = re.compile(string)
+text = re_search.findall(source, re.MULTILINE)
+
+mb = text[::2]
+tim = text[1::2]
+p = []
+x = []
+for i in range(4):
+    for j in range(37):
+        p.append([mb[j], tim[j]])
+    x.append(p)
+
+for i in range(37):
+    print(x[0][i][1])
+
+#print(mb)
+#print('='*30)
+#print(tim)
