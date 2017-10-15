@@ -19,7 +19,8 @@ def pop_paser(filename, find_str1, find_str2, prime_num):
     re_search = re.compile(string)
     text = re_search.findall(source, re.MULTILINE)
 
-    result = {}
+    thread_list = []
+    time_list = []
 
     for items in text:
         if find_str1 in items:
@@ -30,18 +31,19 @@ def pop_paser(filename, find_str1, find_str2, prime_num):
             time_num = set_time[1].strip()
             time_sum += float(time_num)
         else:
-            result[thread_num] = time_sum
+            thread_list.append(int(thread_num))
+            time_list.append(time_sum)
             start_thread = int(thread_num)
             time_sum = float(time_num) 
-    return result    
+    
+    return (thread_list, time_list)    
 
-def mem_paser(filename, find_str1, find_str2, prime_num):
-     ## open the steam bmt result file
-    with open( 'D:/git/python/data/mem_bwt.txt', 'r') as content_file:
+def mem_paser(filename1, filename2, find_str):
+    ## open the steam bmt result file
+    with open( path + filename1, 'r') as content_file:
         source = content_file.read()
         content_file.close()
-    ## finding Triad using Regular expression operations
-    string = "Triad: \s+\d+.\d+"
+    string = find_str + "\s+\d+.\d+"
     re_search = re.compile(string)
     text = re_search.findall(source, re.MULTILINE)
     btw_data = 0
@@ -50,34 +52,39 @@ def mem_paser(filename, find_str1, find_str2, prime_num):
         set_btw = items.split(':')
         btw_data += float(set_btw[1].strip())
         btw_num += 1
-    mem_btw = btw_num / btw_num
-    
-    with open( 'D:/git/python/data/mem-lat.txt', 'r') as content_file:
+    btw_result = btw_data / btw_num
+
+    ## open the steam bmt result file
+    with open( path + filename2, 'r') as content_file:
         source = content_file.read()
         content_file.close()
-    
     string = "\d+[.]\d+"
     re_search = re.compile(string)
     text = re_search.findall(source, re.MULTILINE)
     
-    mb = text[::2]
-    tim = text[1::2]
-    p = []
-    x = []
-    data_size = []
-    mem_lat = []
+    source_data = text[::2]
+    source_time = text[1::2]
+    source_combine = []
+    source_array = []
+    size_list = []
+    lat_list = []
+
     for i in range(4):
         for j in range(37):
-            p.append([mb[j], tim[j]])
-        x.append(p)
-    
-    for i in range(37):
-        data_size.append(float(x[0][i][0]))
-        mem_lat.append(float(x[0][i][1]))
+            source_combine.append([source_data[j], source_time[j]])
+        source_array.append(source_combine)
 
-    return mem_btw, data_size, mem_lat
+    for i in range(37):
+        size_list.append(float(source_array[0][i][0]))
+        lat_list.append(float(source_array[0][i][1]))
+
+    return (btw_result, size_list, lat_list)
+
+def disk_paser(filename1, filename2, find_str):
+    pass
 
 def line_chart(x_value, y_value, title, x_label, y_label):
+    
     line_color = ['b', 'r', 'g', 'y']
     #plt.subplot(2,1,1)
     
@@ -101,11 +108,13 @@ def gen_report():
 
 
 
-#print(mb)
-#print('='*30)
-#print(tim)
-
 cpu_result = pop_paser('result.txt', 'Number of threads:', 'total time:', 20000)
+for i in range(len(cpu_result[0])):
+    print(cpu_result[0][i], cpu_result[1][i])
 print(cpu_result)
 
-#line_chart( data_size, mem_lat, 'CPU BMT', 'Array Size(MB)', 'Latency(ns)' )
+mem_result = mem_paser('mem_bwt.txt', 'mem-lat.txt', 'Triad: ')
+print(mem_result)
+
+line_chart( cpu_result[0], cpu_result[1], 'CPU BMT', 'Thread', 'POPS' )
+line_chart( mem_result[1], mem_result[2], 'Memory BMT', 'Array Size(MB)', 'Latency(ns)' )
