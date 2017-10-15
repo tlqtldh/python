@@ -2,15 +2,15 @@ import re
 import numpy as np 
 from matplotlib import pyplot as plt
 
-path = 'D:/git/python/data/'
+path = 'D:/git/python/results/'
 
-def pop_paser(filename, find_str1, find_str2, prime_num):
+def pop_paser(hostname, find_str1, find_str2, prime_num):
     
     start_thread = 1
     time_sum = 0    
     
     ## open the pop bmt result file
-    with open( path + filename, 'r') as content_file:
+    with open( path + "pops_" + hostname + ".out", 'r') as content_file:
         source = content_file.read()
         content_file.close()
 
@@ -38,9 +38,9 @@ def pop_paser(filename, find_str1, find_str2, prime_num):
     
     return (thread_list, time_list)    
 
-def mem_paser(filename1, filename2, find_str):
+def mem_paser(hostname, find_str):
     ## open the steam bmt result file
-    with open( path + filename1, 'r') as content_file:
+    with open( path + "membtw_" + hostname + ".out", 'r') as content_file:
         source = content_file.read()
         content_file.close()
     string = find_str + "\s+\d+.\d+"
@@ -55,7 +55,7 @@ def mem_paser(filename1, filename2, find_str):
     btw_result = btw_data / btw_num
 
     ## open the steam bmt result file
-    with open( path + filename2, 'r') as content_file:
+    with open( path + "memlat_" + hostname + ".out", 'r') as content_file:
         source = content_file.read()
         content_file.close()
     string = "\d+[.]\d+"
@@ -80,8 +80,17 @@ def mem_paser(filename1, filename2, find_str):
 
     return (btw_result, size_list, lat_list)
 
-def disk_paser(filename1, filename2, find_str):
-    pass
+def sto_paser(filename, find_str):
+    
+    ## open the storage bmt result file
+    with open( path + "sto_" + hostname + ".out", 'r') as content_file:
+        source = content_file.read()
+        content_file.close()
+
+    ## finding threads and total time using Regular expression operations
+    string = find_str1 + "\s+\d+|"+ find_str2 + "\s+\d+.\d+"
+    re_search = re.compile(string)
+    text = re_search.findall(source, re.MULTILINE)
 
 def line_chart(x_value, y_value, title, x_label, y_label):
     
@@ -108,12 +117,12 @@ def gen_report():
 
 
 
-cpu_result = pop_paser('result.txt', 'Number of threads:', 'total time:', 20000)
+cpu_result = pop_paser('BDP-BMT-MGMT01', 'Number of threads:', 'total time:', 20000)
 for i in range(len(cpu_result[0])):
     print(cpu_result[0][i], cpu_result[1][i])
 print(cpu_result)
 
-mem_result = mem_paser('mem_bwt.txt', 'mem-lat.txt', 'Triad: ')
+mem_result = mem_paser('BDP-BMT-MGMT01', 'Triad: ')
 print(mem_result)
 
 line_chart( cpu_result[0], cpu_result[1], 'CPU BMT', 'Thread', 'POPS' )
