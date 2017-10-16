@@ -80,7 +80,7 @@ def mem_paser(hostname, find_str):
 
     return (btw_result, size_list, lat_list)
 
-def sto_paser(filename, find_str):
+def sto_paser(hostname):
     
     ## open the storage bmt result file
     with open( path + "sto_" + hostname + ".out", 'r') as content_file:
@@ -88,9 +88,25 @@ def sto_paser(filename, find_str):
         content_file.close()
 
     ## finding threads and total time using Regular expression operations
-    string = find_str1 + "\s+\d+|"+ find_str2 + "\s+\d+.\d+"
+    string = ".*[:].*group|write[:]|read.*[:].|bw=\d+|iops=\d+"
     re_search = re.compile(string)
     text = re_search.findall(source, re.MULTILINE)
+
+    item_list = []
+
+    for items in text:
+        if 'group' in items:
+            item_list.append(items[:-8])
+        #elif 'read' in items or 'write' in items:
+        #    pattern = items[:-1]
+        #    print(pattern)
+        elif 'bw' in items:
+            bw = items.split('=')
+            item_list.append(int(bw[1].strip()))
+        elif 'iops' in items:
+            iops = items.split('=')
+            item_list.append(int(iops[1].strip()))
+    print(item_list)
 
 def line_chart(x_value, y_value, title, x_label, y_label):
     
@@ -114,7 +130,6 @@ def bar_chart(x, y, title):
 
 def gen_report():
     pass
-
 
 
 cpu_result = pop_paser('BDP-BMT-MGMT01', 'Number of threads:', 'total time:', 20000)
