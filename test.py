@@ -42,7 +42,6 @@ def sto_paser(hostname):
         
     for j, w in enumerate(workload_list):
         if isNumber(w[1]):
-            print(w[1])
             workload_list[j].insert(0, workload_list[j-1][0])
     
     print(workload_list)
