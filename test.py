@@ -25,6 +25,15 @@ def sto_paser(hostname):
 
     item_list = []
     workload_list = []
+    r_read_bw = []
+    r_read_iops = []
+    r_write_bw = []
+    r_write_ipos = []
+    r_m_read_bw = []
+    r_m_read_iops = []
+    r_m_write_bw = []
+    r_m_write_iops = []
+
 
     for items in text:
         if 'group' in items:
@@ -45,6 +54,22 @@ def sto_paser(hostname):
             workload_list[j].insert(0, workload_list[j-1][0])
     
     print(workload_list)
+   
+    for x in workload_list:
+        if 'k100' in x[0]:
+            r_read_bw.append(x[-2])
+            r_read_iops.append(x[-1])
+        elif 'k0' in x[0]:
+            r_write_bw.append(x[-2])
+            r_write_ipos.append(x[-1])
+        elif 'k70' in x[0] and 'read' in x[1]:
+            r_m_read_bw.append(x[-2])
+            r_m_read_iops.append(x[-1])
+        elif 'k70' in x[0] and 'write' in x[1]:
+            r_m_write_bw.append(x[-2])
+            r_m_write_iops.append(x[-1])
+    
+    print(r_read_bw, r_read_iops, r_write_bw, r_write_ipos, r_m_read_bw, r_m_read_iops, r_m_write_bw, r_m_write_iops)
 
 sto_paser('BDP-BMT-MGMT01')
 
