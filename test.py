@@ -1,6 +1,4 @@
 import re
-import numpy as np 
-from matplotlib import pyplot as plt
 
 path = 'D:/git/python/results/'
 
@@ -11,65 +9,45 @@ def isNumber(s):
     except ValueError:
         return False
 
-def sto_paser(hostname):
+def average(values):
+    if len(values) == 0:
+        return None
+    return sum(values, 0.0) / len(values)
+
+def pop_paser(hostname, find_str1, find_str2, prime_num):
     
-    ## open the storage bmt result file
-    with open( path + "sto_" + hostname + ".out", 'r') as content_file:
+    ## open the pop bmt result file
+    with open( path + "pops_" + hostname + ".out", 'r') as content_file:
         source = content_file.read()
         content_file.close()
 
     ## finding threads and total time using Regular expression operations
-    string = ".*[:].*group|write[:]|read.*[:].|bw=\d+|iops=\d+"
+    string = find_str1 + "\s+\d+|"+ find_str2 + "\s+\d+.\d+"
     re_search = re.compile(string)
     text = re_search.findall(source, re.MULTILINE)
 
-    item_list = []
-    workload_list = []
-    r_read_bw = []
-    r_read_iops = []
-    r_write_bw = []
-    r_write_ipos = []
-    r_m_read_bw = []
-    r_m_read_iops = []
-    r_m_write_bw = []
-    r_m_write_iops = []
-
+    thread_sum = []
+    thread_list = []
+    time_list = []
+    time_avg = []
 
     for items in text:
-        if 'group' in items:
-            item_list.append(items[:-8])
-        elif 'read' in items or 'write' in items:
-            item_list.append(items[:-1])
-        elif 'bw' in items:
-            bw = items.split('=')
-            item_list.append(int(bw[1].strip()))
-        elif 'iops' in items:
-            iops = items.split('=')
-            item_list.append(int(iops[1].strip()))
-            workload_list.append(item_list)
-            item_list = []
-        
-    for j, w in enumerate(workload_list):
-        if isNumber(w[1]):
-            workload_list[j].insert(0, workload_list[j-1][0])
-    
-    print(workload_list)
-   
-    for x in workload_list:
-        if 'k100' in x[0]:
-            r_read_bw.append(x[-2])
-            r_read_iops.append(x[-1])
-        elif 'k0' in x[0]:
-            r_write_bw.append(x[-2])
-            r_write_ipos.append(x[-1])
-        elif 'k70' in x[0] and 'read' in x[1]:
-            r_m_read_bw.append(x[-2])
-            r_m_read_iops.append(x[-1])
-        elif 'k70' in x[0] and 'write' in x[1]:
-            r_m_write_bw.append(x[-2])
-            r_m_write_iops.append(x[-1])
-    
-    print(r_read_bw, r_read_iops, r_write_bw, r_write_ipos, r_m_read_bw, r_m_read_iops, r_m_write_bw, r_m_write_iops)
+        if find_str1 in items:
+            set_thread = items.split(':')
+            thread_num = set_thread[1].strip()
+            thread_list.append(int(thread_num))
+        elif find_str2 in items:
+            set_time = items.split(':')
+            time_num = set_time[1].strip()
+            time_list.append(float(time_num))
 
-sto_paser('BDP-BMT-MGMT01')
+    for i in range(0,len(thread_list),5):
+        thread_sum.append(sum(thread_list[i:i+4])/4)
 
+    for i in range(0,len(time_list),5):
+        time_avg.append(20000/average(time_list[i:i+4]))
+      
+    return (thread_sum, time_avg)  
+
+cpu_result = pop_paser('intel4108', 'Number of threads:', 'total time:', 20000)
+print(cpu_result)

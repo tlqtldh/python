@@ -22,13 +22,13 @@ def line_chart(x_value, y_value, title, x_label, y_label):
 def bar_chart(data, title, x_label, y_label):
     
     for i in data:
-    w = np.arange(len(data[0]))
-    plt.bar(w + dist, data[0], color = chart_color[0], width=0.25)
-    plt.legend()
-    plt.grid()
-    plt.text(0, 0, 'Figure. CPU BMT', ha='center')
-    plt.savefig('bmt1.png')
-    plt.show()
+        w = np.arange(len(data[0]))
+        plt.bar(w + dist, data[0], color = chart_color[0], width=0.25)
+        plt.legend()
+        plt.grid()
+        plt.text(0, 0, 'Figure. CPU BMT', ha='center')
+        plt.savefig('bmt1.png')
+        plt.show()
 
     
 

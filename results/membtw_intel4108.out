@@ -1,4 +1,3 @@
-Wed Oct 11 18:43:07 KST 2017
 -------------------------------------------------------------
 STREAM version $Revision: 5.9 $
 -------------------------------------------------------------
@@ -21,8 +20,8 @@ Printing one line per active thread....
 Printing one line per active thread....
 -------------------------------------------------------------
 Your clock granularity/precision appears to be 1 microseconds.
-Each test below will take on the order of 44756 microseconds.
-   (= 44756 clock ticks)
+Each test below will take on the order of 24430 microseconds.
+   (= 24430 clock ticks)
 Increase the size of the arrays if this shows that
 you are not getting at least 20 clock ticks per test.
 -------------------------------------------------------------
@@ -31,10 +30,10 @@ For best results, please be sure you know the
 precision of your system timer.
 -------------------------------------------------------------
 Function      Rate (MB/s)   Avg time     Min time     Max time
-Copy:        8538.4647       0.0604       0.0600       0.0607
-Scale:       8439.9068       0.0609       0.0607       0.0613
-Add:         9789.9174       0.0787       0.0784       0.0789
-Triad:       9815.3331       0.0785       0.0782       0.0790
+Copy:       28801.3150       0.0178       0.0178       0.0178
+Scale:      30396.5187       0.0169       0.0168       0.0169
+Add:        41219.0236       0.0187       0.0186       0.0187
+Triad:      42775.7184       0.0180       0.0180       0.0180
 -------------------------------------------------------------
 Solution Validates
 -------------------------------------------------------------
@@ -60,8 +59,8 @@ Printing one line per active thread....
 Printing one line per active thread....
 -------------------------------------------------------------
 Your clock granularity/precision appears to be 1 microseconds.
-Each test below will take on the order of 44469 microseconds.
-   (= 44469 clock ticks)
+Each test below will take on the order of 24644 microseconds.
+   (= 24644 clock ticks)
 Increase the size of the arrays if this shows that
 you are not getting at least 20 clock ticks per test.
 -------------------------------------------------------------
@@ -70,10 +69,10 @@ For best results, please be sure you know the
 precision of your system timer.
 -------------------------------------------------------------
 Function      Rate (MB/s)   Avg time     Min time     Max time
-Copy:        8515.4415       0.0605       0.0601       0.0607
-Scale:       8442.9927       0.0609       0.0606       0.0612
-Add:         9793.4296       0.0788       0.0784       0.0790
-Triad:       9824.2239       0.0784       0.0782       0.0787
+Copy:       28786.6441       0.0178       0.0178       0.0178
+Scale:      30292.3270       0.0169       0.0169       0.0169
+Add:        41102.2632       0.0187       0.0187       0.0187
+Triad:      42569.3864       0.0181       0.0180       0.0181
 -------------------------------------------------------------
 Solution Validates
 -------------------------------------------------------------
@@ -99,8 +98,8 @@ Printing one line per active thread....
 Printing one line per active thread....
 -------------------------------------------------------------
 Your clock granularity/precision appears to be 1 microseconds.
-Each test below will take on the order of 43906 microseconds.
-   (= 43906 clock ticks)
+Each test below will take on the order of 24173 microseconds.
+   (= 24173 clock ticks)
 Increase the size of the arrays if this shows that
 you are not getting at least 20 clock ticks per test.
 -------------------------------------------------------------
@@ -109,10 +108,10 @@ For best results, please be sure you know the
 precision of your system timer.
 -------------------------------------------------------------
 Function      Rate (MB/s)   Avg time     Min time     Max time
-Copy:        8501.8890       0.0604       0.0602       0.0606
-Scale:       8448.0081       0.0609       0.0606       0.0613
-Add:         9802.6685       0.0786       0.0783       0.0789
-Triad:       9837.3349       0.0783       0.0781       0.0787
+Copy:       28812.5213       0.0178       0.0178       0.0178
+Scale:      30353.1258       0.0169       0.0169       0.0169
+Add:        41216.9139       0.0186       0.0186       0.0187
+Triad:      42642.6459       0.0180       0.0180       0.0181
 -------------------------------------------------------------
 Solution Validates
 -------------------------------------------------------------
@@ -138,8 +137,8 @@ Printing one line per active thread....
 Printing one line per active thread....
 -------------------------------------------------------------
 Your clock granularity/precision appears to be 1 microseconds.
-Each test below will take on the order of 44781 microseconds.
-   (= 44781 clock ticks)
+Each test below will take on the order of 22822 microseconds.
+   (= 22822 clock ticks)
 Increase the size of the arrays if this shows that
 you are not getting at least 20 clock ticks per test.
 -------------------------------------------------------------
@@ -148,10 +147,10 @@ For best results, please be sure you know the
 precision of your system timer.
 -------------------------------------------------------------
 Function      Rate (MB/s)   Avg time     Min time     Max time
-Copy:        8500.5765       0.0604       0.0602       0.0608
-Scale:       8436.5911       0.0609       0.0607       0.0611
-Add:         9777.9414       0.0787       0.0785       0.0788
-Triad:       9827.2510       0.0786       0.0782       0.0788
+Copy:       28801.3150       0.0178       0.0178       0.0178
+Scale:      30387.4862       0.0169       0.0168       0.0169
+Add:        41131.1287       0.0187       0.0187       0.0187
+Triad:      42655.0686       0.0180       0.0180       0.0180
 -------------------------------------------------------------
 Solution Validates
 -------------------------------------------------------------
@@ -177,8 +176,8 @@ Printing one line per active thread....
 Printing one line per active thread....
 -------------------------------------------------------------
 Your clock granularity/precision appears to be 1 microseconds.
-Each test below will take on the order of 43898 microseconds.
-   (= 43898 clock ticks)
+Each test below will take on the order of 24595 microseconds.
+   (= 24595 clock ticks)
 Increase the size of the arrays if this shows that
 you are not getting at least 20 clock ticks per test.
 -------------------------------------------------------------
@@ -187,10 +186,10 @@ For best results, please be sure you know the
 precision of your system timer.
 -------------------------------------------------------------
 Function      Rate (MB/s)   Avg time     Min time     Max time
-Copy:        8519.9686       0.0603       0.0601       0.0607
-Scale:       8460.8558       0.0608       0.0605       0.0612
-Add:         9796.5271       0.0786       0.0784       0.0789
-Triad:       9832.6505       0.0783       0.0781       0.0787
+Copy:       28804.7919       0.0178       0.0178       0.0178
+Scale:      30399.9610       0.0169       0.0168       0.0169
+Add:        41106.9839       0.0187       0.0187       0.0187
+Triad:      42638.1304       0.0180       0.0180       0.0180
 -------------------------------------------------------------
 Solution Validates
 -------------------------------------------------------------
