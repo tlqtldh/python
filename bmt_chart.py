@@ -17,7 +17,7 @@ def single_line_chart(x_value, y_value, title, style, x_label, y_label):
     plt.savefig( title + 'cpubmt.png')
     plt.show()
 
-def multi_line_chart(values, title, style, x_label, y_label):
+def multi_line_chart(values, title, style, x_label, y_label, bmt_title):
     
     filename = 'cpubmt.png'
     
@@ -25,9 +25,10 @@ def multi_line_chart(values, title, style, x_label, y_label):
         plt.plot(values[i][0], values[i][1], chart_color[i], ls=style[i], label=title[i])
         filename = title[i] + filename
     
+    #plt.xticks(np.arange(0, 60, 5.0))
     plt.xlabel( x_label, fontsize=10)
     plt.ylabel( y_label, fontsize=10)
-    plt.title( 'LMBench Memory Latency BMT', fontsize=20)
+    plt.title( bmt_title, fontsize=15)
     plt.legend()
     plt.grid()
     plt.savefig( filename )

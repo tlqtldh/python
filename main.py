@@ -38,8 +38,8 @@ mem_style = ['-', '-']
 #block_size = [4, 8, 16, 32]
 
 #bc.single_line_chart( cpu_result[0][0], cpu_result[0][1], 'intel4108', 'Thread', 'POPS' )
-#bc.multi_line_chart( cpu_result, cpu_title, cpu_style, 'Thread', 'POPS' )
-bc.multi_line_chart( mem_lat_result, mem_title, mem_style, 'Array Size(MB)', 'Latency(ns)' )
+bc.multi_line_chart( cpu_result, cpu_title, cpu_style, 'Thread', 'POPS', 'SysBench CPU POPS BMT' )
+bc.multi_line_chart( mem_lat_result, mem_title, mem_style, 'Array Size(MB)', 'Latency(ns)', 'LMBench Memory Latency BMT' )
 #bc.line_chart( block_size, sto_result[1], 'Random Read', 'Block Size(KB)', 'Bandwdith(GB/S)' )
 #bc.line_chart( block_size, sto_result[3], 'Random write', 'Block Size(KB)', 'Bandwdith(GB/S)' )
 
