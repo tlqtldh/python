@@ -22,15 +22,18 @@ def multi_line_chart(values, title, style, x_label, y_label, bmt_title):
     filename = 'cpubmt.png'
     
     for i in range(len(values)):
-        plt.plot(values[i][0], values[i][1], chart_color[i], ls=style[i], label=title[i])
+        plt.plot(values[i][0], values[i][1], chart_color[i], ls=style[i], label=title[i], linewidth=2)
         filename = title[i] + filename
-    
-    #plt.xticks(np.arange(0, 60, 5.0))
+    #x = 1.1
+    #xscale = [0.00001, 0.0001, 0.001, 0.002, 0.003, 0.005, 0.007, 0.01, 0.02, 0.03, 0.04, 0.05, 0.07, 0.1, 0.3, 0.5, 0.7, 1.0, 1.5, 2.0, 3,0, 5.0, 10.0, 20.0, 30, 50, 100, 150, 256]
+    #plt.xticks(xscale)
+    #t = np.arange(0.01, 256.0, 0.01)
+    #plt.semilogx(t, np.sin(t*2.0))
     plt.xlabel( x_label, fontsize=10)
     plt.ylabel( y_label, fontsize=10)
     plt.title( bmt_title, fontsize=15)
     plt.legend()
-    plt.grid()
+    plt.grid(True)
     plt.savefig( filename )
     plt.show()
 

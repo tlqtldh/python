@@ -8,8 +8,10 @@ Total memory required = 732.4 MB.
 Each test is run 10 times, but only
 the *best* time for each is used.
 -------------------------------------------------------------
-Number of Threads requested = 8
+Number of Threads requested = 10
 -------------------------------------------------------------
+Printing one line per active thread....
+Printing one line per active thread....
 Printing one line per active thread....
 Printing one line per active thread....
 Printing one line per active thread....
@@ -20,8 +22,8 @@ Printing one line per active thread....
 Printing one line per active thread....
 -------------------------------------------------------------
 Your clock granularity/precision appears to be 1 microseconds.
-Each test below will take on the order of 23034 microseconds.
-   (= 23034 clock ticks)
+Each test below will take on the order of 21859 microseconds.
+   (= 21859 clock ticks)
 Increase the size of the arrays if this shows that
 you are not getting at least 20 clock ticks per test.
 -------------------------------------------------------------
@@ -30,10 +32,10 @@ For best results, please be sure you know the
 precision of your system timer.
 -------------------------------------------------------------
 Function      Rate (MB/s)   Avg time     Min time     Max time
-Copy:       28830.3147       0.0178       0.0178       0.0178
-Scale:      30360.8501       0.0169       0.0169       0.0169
-Add:        41210.5862       0.0186       0.0186       0.0187
-Triad:      42654.5038       0.0180       0.0180       0.0180
+Copy:       41880.8731       0.0122       0.0122       0.0122
+Scale:      43812.7848       0.0117       0.0117       0.0117
+Add:        57147.3641       0.0135       0.0134       0.0135
+Triad:      57757.0371       0.0133       0.0133       0.0134
 -------------------------------------------------------------
 Solution Validates
 -------------------------------------------------------------
@@ -47,8 +49,10 @@ Total memory required = 732.4 MB.
 Each test is run 10 times, but only
 the *best* time for each is used.
 -------------------------------------------------------------
-Number of Threads requested = 8
+Number of Threads requested = 10
 -------------------------------------------------------------
+Printing one line per active thread....
+Printing one line per active thread....
 Printing one line per active thread....
 Printing one line per active thread....
 Printing one line per active thread....
@@ -59,8 +63,8 @@ Printing one line per active thread....
 Printing one line per active thread....
 -------------------------------------------------------------
 Your clock granularity/precision appears to be 1 microseconds.
-Each test below will take on the order of 23293 microseconds.
-   (= 23293 clock ticks)
+Each test below will take on the order of 21089 microseconds.
+   (= 21089 clock ticks)
 Increase the size of the arrays if this shows that
 you are not getting at least 20 clock ticks per test.
 -------------------------------------------------------------
@@ -69,10 +73,10 @@ For best results, please be sure you know the
 precision of your system timer.
 -------------------------------------------------------------
 Function      Rate (MB/s)   Avg time     Min time     Max time
-Copy:       28757.7321       0.0178       0.0178       0.0178
-Scale:      30304.7239       0.0169       0.0169       0.0169
-Add:        41065.0605       0.0187       0.0187       0.0187
-Triad:      42571.6368       0.0181       0.0180       0.0181
+Copy:       41860.4637       0.0122       0.0122       0.0123
+Scale:      43730.7033       0.0117       0.0117       0.0117
+Add:        56817.7492       0.0135       0.0135       0.0136
+Triad:      57588.7275       0.0134       0.0133       0.0134
 -------------------------------------------------------------
 Solution Validates
 -------------------------------------------------------------
@@ -86,8 +90,10 @@ Total memory required = 732.4 MB.
 Each test is run 10 times, but only
 the *best* time for each is used.
 -------------------------------------------------------------
-Number of Threads requested = 8
+Number of Threads requested = 10
 -------------------------------------------------------------
+Printing one line per active thread....
+Printing one line per active thread....
 Printing one line per active thread....
 Printing one line per active thread....
 Printing one line per active thread....
@@ -98,8 +104,8 @@ Printing one line per active thread....
 Printing one line per active thread....
 -------------------------------------------------------------
 Your clock granularity/precision appears to be 1 microseconds.
-Each test below will take on the order of 24840 microseconds.
-   (= 24840 clock ticks)
+Each test below will take on the order of 20855 microseconds.
+   (= 20855 clock ticks)
 Increase the size of the arrays if this shows that
 you are not getting at least 20 clock ticks per test.
 -------------------------------------------------------------
@@ -108,10 +114,10 @@ For best results, please be sure you know the
 precision of your system timer.
 -------------------------------------------------------------
 Function      Rate (MB/s)   Avg time     Min time     Max time
-Copy:       28770.8317       0.0178       0.0178       0.0178
-Scale:      30345.8342       0.0169       0.0169       0.0169
-Add:        41071.8672       0.0187       0.0187       0.0187
-Triad:      42584.0182       0.0181       0.0180       0.0181
+Copy:       41768.4609       0.0123       0.0123       0.0123
+Scale:      43712.0104       0.0117       0.0117       0.0118
+Add:        56362.4278       0.0137       0.0136       0.0137
+Triad:      56833.7886       0.0135       0.0135       0.0136
 -------------------------------------------------------------
 Solution Validates
 -------------------------------------------------------------
@@ -125,8 +131,10 @@ Total memory required = 732.4 MB.
 Each test is run 10 times, but only
 the *best* time for each is used.
 -------------------------------------------------------------
-Number of Threads requested = 8
+Number of Threads requested = 10
 -------------------------------------------------------------
+Printing one line per active thread....
+Printing one line per active thread....
 Printing one line per active thread....
 Printing one line per active thread....
 Printing one line per active thread....
@@ -137,8 +145,8 @@ Printing one line per active thread....
 Printing one line per active thread....
 -------------------------------------------------------------
 Your clock granularity/precision appears to be 1 microseconds.
-Each test below will take on the order of 23705 microseconds.
-   (= 23705 clock ticks)
+Each test below will take on the order of 20685 microseconds.
+   (= 20685 clock ticks)
 Increase the size of the arrays if this shows that
 you are not getting at least 20 clock ticks per test.
 -------------------------------------------------------------
@@ -147,10 +155,10 @@ For best results, please be sure you know the
 precision of your system timer.
 -------------------------------------------------------------
 Function      Rate (MB/s)   Avg time     Min time     Max time
-Copy:       28780.0856       0.0178       0.0178       0.0178
-Scale:      30383.6167       0.0169       0.0169       0.0169
-Add:        41122.2023       0.0187       0.0187       0.0187
-Triad:      42668.6289       0.0180       0.0180       0.0180
+Copy:       41847.4121       0.0122       0.0122       0.0123
+Scale:      43708.4517       0.0117       0.0117       0.0118
+Add:        56494.8871       0.0136       0.0136       0.0137
+Triad:      57159.5328       0.0135       0.0134       0.0135
 -------------------------------------------------------------
 Solution Validates
 -------------------------------------------------------------
@@ -164,8 +172,10 @@ Total memory required = 732.4 MB.
 Each test is run 10 times, but only
 the *best* time for each is used.
 -------------------------------------------------------------
-Number of Threads requested = 8
+Number of Threads requested = 10
 -------------------------------------------------------------
+Printing one line per active thread....
+Printing one line per active thread....
 Printing one line per active thread....
 Printing one line per active thread....
 Printing one line per active thread....
@@ -176,8 +186,8 @@ Printing one line per active thread....
 Printing one line per active thread....
 -------------------------------------------------------------
 Your clock granularity/precision appears to be 1 microseconds.
-Each test below will take on the order of 24459 microseconds.
-   (= 24459 clock ticks)
+Each test below will take on the order of 20159 microseconds.
+   (= 20159 clock ticks)
 Increase the size of the arrays if this shows that
 you are not getting at least 20 clock ticks per test.
 -------------------------------------------------------------
@@ -186,10 +196,10 @@ For best results, please be sure you know the
 precision of your system timer.
 -------------------------------------------------------------
 Function      Rate (MB/s)   Avg time     Min time     Max time
-Copy:       28801.3150       0.0178       0.0178       0.0178
-Scale:      30367.7194       0.0169       0.0169       0.0169
-Add:        41188.4546       0.0187       0.0186       0.0187
-Triad:      42635.8729       0.0180       0.0180       0.0180
+Copy:       41929.9369       0.0122       0.0122       0.0122
+Scale:      43768.1371       0.0117       0.0117       0.0117
+Add:        57066.3715       0.0135       0.0135       0.0135
+Triad:      57618.6004       0.0134       0.0133       0.0134
 -------------------------------------------------------------
 Solution Validates
 -------------------------------------------------------------
