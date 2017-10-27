@@ -1,7 +1,7 @@
 import numpy as np 
 from matplotlib import pyplot as plt
 
-chart_color = ['b', 'g', 'r', 'c', 'm', 'y', 'k', 'b', 'g', 'r', 'c', 'm', 'y', 'k']
+chart_color = ['b', 'b', 'g', 'g', 'r', 'r', 'c', 'm', 'y', 'k', 'b', 'g', 'r', 'c', 'm', 'y', 'k']
 
 def single_line_chart(x_value, y_value, title, style, x_label, y_label):
     
@@ -22,7 +22,7 @@ def multi_line_chart(values, title, style, x_label, y_label, bmt_title):
     filename = 'cpubmt.png'
     
     for i in range(len(values)):
-        plt.plot(values[i][0], values[i][1], chart_color[i], ls=style[i], label=title[i], linewidth=2)
+        plt.plot(values[i][0], values[i][1], chart_color[i], ls=style[i], label=title[i], linewidth=1)
         filename = title[i] + filename
     #x = 1.1
     #xscale = [0.00001, 0.0001, 0.001, 0.002, 0.003, 0.005, 0.007, 0.01, 0.02, 0.03, 0.04, 0.05, 0.07, 0.1, 0.3, 0.5, 0.7, 1.0, 1.5, 2.0, 3,0, 5.0, 10.0, 20.0, 30, 50, 100, 150, 256]
