@@ -30,33 +30,32 @@ cpu_style = ['--', '-', '--','-', '--', '-']
 #print(len(cpu_result))
 #print(len(cpu_result[0][0]))
 
-mem_result = []
-mem_btw_result = []
-mem_lat_result = []
-
-mem_result.append(bp.mem_paser('intel4108', 'Triad: '))
-mem_result.append(bp.mem_paser('intel4110', 'Triad: '))
-mem_result.append(bp.mem_paser('intel4114', 'Triad: '))
-mem_result.append(bp.mem_paser('intel5120', 'Triad: '))
-
-for i in range(len(mem_result)):
-    mem_btw_result.append(mem_result[i][0])
-    mem_lat_result.append(mem_result[i][1:3])
-
-mem_title = ['intel4108', 'intel4110', 'intel4114', 'intel5120']
-mem_style = ['-', '-', '-', '-']
+#mem_result = []
+#mem_btw_result = []
+#mem_lat_result = []
+#
+#mem_result.append(bp.mem_paser('intel4108', 'Triad: '))
+#mem_result.append(bp.mem_paser('intel4110', 'Triad: '))
+#mem_result.append(bp.mem_paser('intel4114', 'Triad: '))
+#mem_result.append(bp.mem_paser('intel5120', 'Triad: '))
+#
+#for i in range(len(mem_result)):
+#    mem_btw_result.append(mem_result[i][0])
+#    mem_lat_result.append(mem_result[i][1:3])
+#
+#mem_title = ['intel4108', 'intel4110', 'intel4114', 'intel5120']
+#mem_style = ['-', '-', '-', '-']
 
 # return(r_read_bw, r_read_iops, r_write_bw, r_write_ipos, r_m_read_bw, r_m_read_iops, r_m_write_bw, r_m_write_iops)
-#sto_result = bp.sto_paser('BDP-BMT-MGMT01')
-#print(sto_result)
+sto_result = bp.sto_paser('intelssd')
+print(sto_result)
 #block_size = [4, 8, 16, 32]
 
 #bc.single_line_chart( cpu_result[0][0], cpu_result[0][1], 'intel4108', 'Thread', 'POPS' )
-bc.multi_line_chart( cpu_result, cpu_title, cpu_style, 'Thread', 'POPS', 'SysBench CPU POPS' )
-bc.multi_line_chart( mem_lat_result, mem_title, mem_style, 'Array Size(MB)', 'Latency(ns)', 'LMBench Memory Latency' )
+#bc.multi_line_chart( cpu_result, cpu_title, cpu_style, 'Thread', 'POPS', 'SysBench CPU POPS' )
+#bc.multi_line_chart( mem_lat_result, mem_title, mem_style, 'Array Size(MB)', 'Latency(ns)', 'LMBench Memory Latency' )
 #bc.line_chart( block_size, sto_result[1], 'Random Read', 'Block Size(KB)', 'Bandwdith(GB/S)' )
 #bc.line_chart( block_size, sto_result[3], 'Random write', 'Block Size(KB)', 'Bandwdith(GB/S)' )
 
-bc.bar_chart( 
-)
+#bc.bar_chart( )
 #bc.line_chart( )

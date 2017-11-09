@@ -148,5 +148,20 @@ def sto_paser(hostname):
     
     return(r_read_bw, r_read_iops, r_write_bw, r_write_ipos, r_m_read_bw, r_m_read_iops, r_m_write_bw, r_m_write_iops)
 
+
+def sto_paser_(hostname):
+     with open( path + "sto_" + hostname + ".out", 'r') as content_file:
+        source = content_file.read()
+        content_file.close(
+        )
+    
+    item_list = []
+    ## finding threads and total time using Regular expression operations
+    text = source.split(";")
+    item_list.append(text)
+    string = ".*[:].*group|write[:]|read.*[:].|bw=\d+|iops=\d+"
+    re_search = re.compile(string)
+    text = re_search.findall(source, re.MULTILINE)   
+
 if __name__ == '__main__':    
     pass
