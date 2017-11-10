@@ -92,6 +92,7 @@ def mem_paser(hostname, find_str):
     return (btw_result, size_list, lat_list)
 
 def sto_paser(hostname):
+    item_list = []
     with open( path + "sto_" + hostname + ".out", 'r') as content_file:
         source = content_file.readlines()
         for line in source:

@@ -47,7 +47,9 @@ cpu_style = ['--', '-', '--','-', '--', '-']
 #mem_style = ['-', '-', '-', '-']
 
 # return(r_read_bw, r_read_iops, r_write_bw, r_write_ipos, r_m_read_bw, r_m_read_iops, r_m_write_bw, r_m_write_iops)
-sto_result = bp.sto_paser('intelssd')
+sto_result = []
+sto_result.append(bp.sto_paser('intelssd'))
+#s_read_bw, s_write_bw, r_read_bw, r_write_bw, r_rwread_bw, r_rwwrite_bw, s_read_iops, s_write_iops, r_read_iops, r_write_iops, r_rwread_iops, r_rwwrite_iops)
 print(sto_result)
 #block_size = [4, 8, 16, 32]
 
