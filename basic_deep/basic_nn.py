@@ -53,6 +53,13 @@ def predict(network, x):
     W1, W2, W3 = network['W1'], network['W2'], network['W3']
     b1, b2, b3 = network['b1'], network['b2'], network['b3']
 
+#    print ('W1', W1.shape)
+#    print ('W2', W2.shape)
+#    print ('W3', W3.shape)
+#    print ('b1', b1.shape)
+#    print ('b2', b2.shape)
+#    print ('b3', b3.shape)
+
     a1 = np.dot(x, W1) + b1
     z1 = sigmoid(a1)
     a2 = np.dot(z1, W2) + b2
@@ -62,7 +69,7 @@ def predict(network, x):
 
     return y
 
-data =init_network()
+#data =init_network()
 #print(data)
 
 x, t = get_data()
@@ -71,6 +78,7 @@ network = init_network()
 accuracy_cnt = 0
 for i in range(len(x)):
     y = predict(network, x[i])
+
     p= np.argmax(y) # 확률이 가장 높은 원소의 인덱스를 얻는다.
     if p == t[i]:
         accuracy_cnt += 1
