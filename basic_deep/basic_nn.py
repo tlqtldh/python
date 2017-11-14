@@ -33,6 +33,9 @@ from PIL import Image
 #
 #print(Y)
 
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+
 def softmax(data):
     el_max = np.max(data)
     exp_a = np.exp(data - el_max) # 오버 플로우 대책
@@ -75,12 +78,14 @@ def predict(network, x):
 x, t = get_data()
 print(x.shape, t.shape)
 network = init_network()
-accuracy_cnt = 0
-for i in range(len(x)):
-    y = predict(network, x[i])
 
-    p= np.argmax(y) # 확률이 가장 높은 원소의 인덱스를 얻는다.
-    if p == t[i]:
-        accuracy_cnt += 1
+batch_size = 100
+accuracy_cnt = 0
+
+for i in range(0, len(x), batch_size):
+    x_batch = x[i:i+batch_size]
+    y_batch = predict(network, x_batch)
+    p = np.argmax(y_batch, axis = 1)
+    accuracy_cnt += np.sum(p == t[i:i+batch_size])
 
 print("Accuracy:" + str(float(accuracy_cnt) / len(x)))
