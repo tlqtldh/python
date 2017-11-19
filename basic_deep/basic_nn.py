@@ -5,7 +5,7 @@ sys.path.append(os.pardir)  # 부모 디렉터리의 파일을 가져올 수 있
 import numpy as np
 import pickle
 from dataset.mnist import load_mnist
-from common.functions import sigmoid, softmax
+import comm_func
 from PIL import Image
 
 
@@ -32,16 +32,6 @@ from PIL import Image
 #Y = identify_fun(A3)
 #
 #print(Y)
-
-def sigmoid(x):
-    return 1 / (1 + np.exp(-x))
-
-def softmax(data):
-    el_max = np.max(data)
-    exp_a = np.exp(data - el_max) # 오버 플로우 대책
-    sum_exp_a = np.sum(exp_a)
-    y = exp_a / sum_exp_a
-    return y
 
 def get_data():
     (x_train, t_train), (x_test, t_test) = load_mnist(normalize=True, flatten=True, one_hot_label=False)
