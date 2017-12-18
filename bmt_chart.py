@@ -1,4 +1,4 @@
-import numpy as np 
+import numpy as np
 from matplotlib import pyplot as plt
 
 chart_color = ['b', 'b', 'g', 'g', 'r', 'r', 'c', 'm', 'y', 'k', 'b', 'g', 'r', 'c', 'm', 'y', 'k']
@@ -13,7 +13,7 @@ def single_line_chart(x_value, y_value, title, style, x_label, y_label):
     plt.title( 'SysBench CPU POPS BMT', fontsize=20)
     plt.xticks(x_value, rotation=75)
     plt.legend()
-    plt.grid()
+    plt.grid(True)
     plt.savefig( title + 'cpubmt.png')
     plt.show()
 
@@ -36,6 +36,28 @@ def multi_line_chart(values, title, style, x_label, y_label, bmt_title):
     plt.grid(True)
     plt.savefig( filename )
     plt.show()
+
+def parallel_line_chart(x_values, y_values, title, x_label, y_label, bmt_title):
+
+    y_axle = [ i for i in range(len(y_values)) ]
+    print(y_axle)
+    for i in range(len(x_values)):
+        plt.subplot('32' + str(i+1))
+        plt.plot(y_axle, x_values[i], chart_color[i], label=title, linewidth=1 )
+        xscale = ['%.0f' % i for i in y_values]
+        plt.xticks(range(len(y_axle)), xscale, size='small')
+        plt.xlabel( x_label, fontsize=8)
+        plt.ylabel( y_label, fontsize=8)
+        plt.title( bmt_title[i], fontsize=12)
+        plt.legend()
+        plt.grid(True)
+    plt.tight_layout()
+    plt.show()   
+    
+    #plt.legend()
+    #plt.grid(True)
+        
+  
 
 def bar_chart(data, title, x_label, y_label):
     

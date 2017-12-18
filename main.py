@@ -18,7 +18,8 @@ cpu_result.append(bp.pop_paser('intel5120', 'Number of threads:', 'total time:',
 #cpu_result.append(bp.pop_paser('intel4110', 'Number of threads:', 'total time:', 20000))
 #cpu_result.append(bp.pop_paser('intel4114', 'Number of threads:', 'total time:', 20000))
 #cpu_result.append(bp.pop_paser('intel5120', 'Number of threads:', 'total time:', 20000))
-print(cpu_result)
+
+#print(cpu_result)
 cpu_title = ['2620v4', '4110', '2630v4', '4114', '2660v4', '5120']
 cpu_style = ['--', '-', '--','-', '--', '-']
 #cpu_title = ['2630v4','2660v4', '2620v4', 'intel4108', 'intel4110', 'intel4114','intel5120']
@@ -49,15 +50,16 @@ cpu_style = ['--', '-', '--','-', '--', '-']
 # return(r_read_bw, r_read_iops, r_write_bw, r_write_ipos, r_m_read_bw, r_m_read_iops, r_m_write_bw, r_m_write_iops)
 sto_result = []
 sto_result.append(bp.sto_paser('intelssd'))
-#s_read_bw, s_write_bw, r_read_bw, r_write_bw, r_rwread_bw, r_rwwrite_bw, s_read_iops, s_write_iops, r_read_iops, r_write_iops, r_rwread_iops, r_rwwrite_iops)
+sto_bmt_type = ['Squential_read_bw', 'Squential_write_bw', 'Random_read_bw', 'Random_write_bw', 'Random_rwread_bw', 'Random_rwwrite_bw', 'Squential_read_iops', 'Squential_write_iops', 'Random_read_iops', 'Random_write_iops', 'Random_rwread_iops', 'Random_rwwrite_iops']
 print(sto_result)
-#block_size = [4, 8, 16, 32]
+block_size = [4, 8, 16, 32, 64]
 
 #bc.single_line_chart( cpu_result[0][0], cpu_result[0][1], 'intel4108', 'Thread', 'POPS' )
-#bc.multi_line_chart( cpu_result, cpu_title, cpu_style, 'Thread', 'POPS', 'SysBench CPU POPS' )
+bc.multi_line_chart( cpu_result, cpu_title, cpu_style, 'Thread', 'POPS', 'SysBench CPU POPS' )
 #bc.multi_line_chart( mem_lat_result, mem_title, mem_style, 'Array Size(MB)', 'Latency(ns)', 'LMBench Memory Latency' )
-#bc.line_chart( block_size, sto_result[1], 'Random Read', 'Block Size(KB)', 'Bandwdith(GB/S)' )
-#bc.line_chart( block_size, sto_result[3], 'Random write', 'Block Size(KB)', 'Bandwdith(GB/S)' )
+#print(sto_result[0][0:6])
+bc.parallel_line_chart( sto_result[0][0:6], block_size, 'HP360G10', 'Block Size(KB)', 'Bandwdith(GB/S)', sto_bmt_type[0:6] )
+bc.parallel_line_chart( sto_result[0][6:13], block_size, 'HP360G10', 'Block Size(KB)', 'IOPS', sto_bmt_type[6:13] )
 
 #bc.bar_chart( )
 #bc.line_chart( )
