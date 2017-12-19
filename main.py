@@ -50,7 +50,7 @@ cpu_style = ['--', '-', '--','-', '--', '-']
 # return(r_read_bw, r_read_iops, r_write_bw, r_write_ipos, r_m_read_bw, r_m_read_iops, r_m_write_bw, r_m_write_iops)
 sto_result = []
 sto_result.append(bp.sto_paser('intelssd'))
-sto_bmt_type = ['Squential_read_bw', 'Squential_write_bw', 'Random_read_bw', 'Random_write_bw', 'Random_rwread_bw', 'Random_rwwrite_bw', 'Squential_read_iops', 'Squential_write_iops', 'Random_read_iops', 'Random_write_iops', 'Random_rwread_iops', 'Random_rwwrite_iops']
+sto_bmt_type = ['Squential_Read_BW', 'Squential_Write_BW', 'Random_Read_BW', 'Random_Write_BW', 'Random_R70:W30_BW', 'Random_R70:W30_BW', 'Squential_Read_IOPS', 'Squential_Write_IOPS', 'Random_Read_IOPS', 'Random_Write_IOPS', 'Random_R70:W30_IOPS', 'Random_R70:W30)_IOPS']
 print(sto_result)
 block_size = [4, 8, 16, 32, 64]
 
