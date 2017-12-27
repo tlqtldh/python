@@ -49,7 +49,7 @@ cpu_style = ['--', '-', '--','-', '--', '-']
 
 # return(r_read_bw, r_read_iops, r_write_bw, r_write_ipos, r_m_read_bw, r_m_read_iops, r_m_write_bw, r_m_write_iops)
 sto_result = []
-sto_result.append(bp.sto_paser('DL360G10'))
+sto_result.append(bp.sto_paser('DL380G9-1'))
 sto_bmt_type = ['Squential_Read_BW', 'Squential_Write_BW', 'Random_Read_BW', 'Random_Write_BW', 'Random_R70:W30_BW', 'Squential_Read_IOPS', 'Squential_Write_IOPS', 'Random_Read_IOPS', 'Random_Write_IOPS', 'Random_R70:W30_IOPS']
 print(sto_result)
 block_size = [4, 8, 16, 32, 64]
@@ -58,7 +58,7 @@ block_size = [4, 8, 16, 32, 64]
 #bc.multi_line_chart( cpu_result, cpu_title, cpu_style, 'Thread', 'POPS', 'SysBench CPU POPS' )
 #bc.multi_line_chart( mem_lat_result, mem_title, mem_style, 'Array Size(MB)', 'Latency(ns)', 'LMBench Memory Latency' )
 #print(sto_result[0][0:6])
-bc.parallel_line_chart( sto_result[0][0:6], block_size, 'HP380G9', 'Block Size(KB)', 'Bandwdith(GB/S)', sto_bmt_type[0:6] )
+bc.parallel_line_chart( sto_result[0][0:6], block_size, 'HP380G9', 'Block Size(KB)', 'Bandwdith(Byte/s)', sto_bmt_type[0:6] )
 bc.parallel_line_chart( sto_result[0][6:13], block_size, 'HP380G9', 'Block Size(KB)', 'IOPS', sto_bmt_type[6:13] )
 
 #bc.bar_chart( )
