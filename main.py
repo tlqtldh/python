@@ -32,35 +32,35 @@ cpu_style = ['--', '-']
 #print(len(cpu_result))
 #print(len(cpu_result[0][0]))
 
-#mem_result = []
-#mem_btw_result = []
-#mem_lat_result = []
+mem_result = []
+mem_btw_result = []
+mem_lat_result = []
 #
-#mem_result.append(bp.mem_paser('intel4108', 'Triad: '))
-#mem_result.append(bp.mem_paser('intel4110', 'Triad: '))
+mem_result.append(bp.mem_paser('hpdl380g9_before', 'Triad: '))
+mem_result.append(bp.mem_paser('hpdl380g9_after', 'Triad: '))
 #mem_result.append(bp.mem_paser('intel4114', 'Triad: '))
 #mem_result.append(bp.mem_paser('intel5120', 'Triad: '))
 #
-#for i in range(len(mem_result)):
-#    mem_btw_result.append(mem_result[i][0])
-#    mem_lat_result.append(mem_result[i][1:3])
+for i in range(len(mem_result)):
+    mem_btw_result.append(mem_result[i][0])
+    mem_lat_result.append(mem_result[i][1:3])
 #
-#mem_title = ['intel4108', 'intel4110', 'intel4114', 'intel5120']
-#mem_style = ['-', '-', '-', '-']
+mem_title = ['hpdl380g9_before', 'hpdl380g9_after']
+mem_style = ['-', '-']
 
 # return(r_read_bw, r_read_iops, r_write_bw, r_write_ipos, r_m_read_bw, r_m_read_iops, r_m_write_bw, r_m_write_iops)
 sto_result = []
-sto_result.append(bp.sto_paser('hpdl380g9_before'))
+sto_result.append(bp.sto_paser('hpdl380g9_after'))
 sto_bmt_type = ['Squential_Read_BW', 'Squential_Write_BW', 'Random_Read_BW', 'Random_Write_BW', 'Random_R70:W30_BW', 'Squential_Read_IOPS', 'Squential_Write_IOPS', 'Random_Read_IOPS', 'Random_Write_IOPS', 'Random_R70:W30_IOPS']
 print(sto_result)
 block_size = [4, 8, 16, 32, 64]
 
 #bc.single_line_chart( cpu_result[0][0], cpu_result[0][1], 'intel4108', 'Thread', 'POPS' )
 bc.multi_line_chart( cpu_result, cpu_title, cpu_style, 'Thread', 'POPS', 'SysBench CPU POPS' )
-#bc.multi_line_chart( mem_lat_result, mem_title, mem_style, 'Array Size(MB)', 'Latency(ns)', 'LMBench Memory Latency' )
+bc.multi_line_chart( mem_lat_result, mem_title, mem_style, 'Array Size(MB)', 'Latency(ns)', 'LMBench Memory Latency' )
 print(sto_result[0][0:6])
-bc.parallel_line_chart( sto_result[0][0:6], block_size, 'hpdl380g9_before', 'Block Size(KB)', 'Bandwdith(Byte/s)', sto_bmt_type[0:6] )
-bc.parallel_line_chart( sto_result[0][6:13], block_size, 'hpdl380g9_before', 'Block Size(KB)', 'IOPS', sto_bmt_type[6:13] )
+bc.parallel_line_chart( sto_result[0][0:6], block_size, 'hpdl380g9_after', 'Block Size(KB)', 'Bandwdith(Byte/s)', sto_bmt_type[0:6] )
+bc.parallel_line_chart( sto_result[0][6:13], block_size, 'hpdl380g9_after', 'Block Size(KB)', 'IOPS', sto_bmt_type[6:13] )
 
 #bc.bar_chart( )
 #bc.line_chart( )
